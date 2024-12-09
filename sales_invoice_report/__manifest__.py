@@ -1,0 +1,31 @@
+# -*- coding: utf-8 -*-
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
+{
+    'name': 'Sale Invoice report',
+    'version': '16.0.1.0.0',
+    'summary': 'Sale invoice report',
+    'author': 'Divergent Catalist ERP Solutions',
+    'company': 'Divergent Catalist ERP Solutions',
+    'maintainer': 'Divergent Catalist ERP Solutions',
+    'sequence': 10,
+    'description': """Sale Invoice Report""",
+    'category': 'Sale',
+    'website': 'https://www.catalisterp.com/',
+    'depends': ['base', 'sale'],
+    'data': [
+        'views/res_bank_view.xml',
+        'views/res_company_view.xml',
+        'views/product_view.xml',
+        'views/sale_order_view.xml',
+        'reports/sales_invoice_pdf.xml',
+        'reports/sales_invoice_print_view.xml',
+        'reports/sales_invoice_without_print.xml',
+        'reports/sales_invoice_proforma_view.xml',
+    ],
+    'demo': [],
+    'qweb': [],
+    'licenSe': 'LGPL-3',
+    'installable': True,
+    'application': True,
+    'auto_install': False,
+}

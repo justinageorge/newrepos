@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record id="paperformat_sales_report_pdf" model="report.paperformat">
+        <field name="name">Sale Invoice Report</field>
+        <field name="default" eval="True"/>
+        <field name="format">A4</field>
+        <field name="page_height">0</field>
+        <field name="page_width">0</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">5</field>
+        <field name="margin_bottom">10</field>
+        <field name="margin_left">5</field>
+        <field name="margin_right">5</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">20</field>
+        <field name="dpi">90</field>
+    </record>
+
+    <record id="record_sales_invoice_report_print" model="ir.actions.report">
+        <field name="name">Sales Invoice</field>
+        <field name="model">account.move</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">sales_invoice_report.sales_invoice_report_template_pdf</field>
+        <field name="report_file">sales_invoice_report.sales_invoice_report_template_pdf</field>
+        <field name="binding_model_id" ref="sale.model_account_move"/>
+        <field name="binding_view_types">form</field>
+        <field name="binding_type">report</field>
+        <field name="paperformat_id" ref="sales_invoice_report.paperformat_sales_report_pdf"/>
+    </record>
+
+    <record id="paperformat_proforma_invoice_pdf" model="report.paperformat">
+        <field name="name">Sale proforma Report</field>
+        <field name="default" eval="True"/>
+        <field name="format">A4</field>
+        <field name="page_height">0</field>
+        <field name="page_width">0</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">5</field>
+        <field name="margin_bottom">10</field>
+        <field name="margin_left">5</field>
+        <field name="margin_right">5</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">20</field>
+        <field name="dpi">90</field>
+    </record>
+    <record id="record_sales_invoice_proforma_print" model="ir.actions.report">
+        <field name="name">Proforma Invoice</field>
+        <field name="model">account.move</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">sales_invoice_report.sales_invoice_proforma_template_pdf</field>
+        <field name="report_file">sales_invoice_report.sales_invoice_proforma_template_pdf</field>
+        <field name="binding_model_id" ref="sale.model_account_move"/>
+        <field name="binding_view_types">form</field>
+        <field name="binding_type">report</field>
+        <field name="paperformat_id" ref="sales_invoice_report.paperformat_proforma_invoice_pdf"/>
+    </record>
+    <!--New Print Without Header-->
+    <record id="paperformat_sales_report_without_header_pdf" model="report.paperformat">
+        <field name="name">Sale Invoice Report Without Header</field>
+        <field name="default" eval="True"/>
+        <field name="format">A4</field>
+        <field name="page_height">0</field>
+        <field name="page_width">0</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">25</field>
+        <field name="margin_bottom">10</field>
+        <field name="margin_left">5</field>
+        <field name="margin_right">5</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">20</field>
+        <field name="dpi">90</field>
+    </record>
+
+    <record id="record_sales_invoice_report_without_header_print" model="ir.actions.report">
+        <field name="name">Sales Invoice Without Header</field>
+        <field name="model">account.move</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">sales_invoice_report.sales_invoice_report_without_header_template_pdf</field>
+        <field name="report_file">sales_invoice_report.sales_invoice_report_without_header_template_pdf</field>
+        <field name="binding_model_id" ref="sale.model_account_move"/>
+        <field name="binding_view_types">form</field>
+        <field name="binding_type">report</field>
+        <field name="paperformat_id" ref="sales_invoice_report.paperformat_sales_report_without_header_pdf"/>
+    </record>
+
+</odoo>
